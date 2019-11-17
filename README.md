@@ -64,7 +64,8 @@
   - [`useSize`](./docs/useSize.md) &mdash; tracks an HTML element's size.
   - [`useStartTyping`](./docs/useStartTyping.md) &mdash; detects when user starts typing.
   - [`useWindowScroll`](./docs/useWindowScroll.md) &mdash; tracks `Window` scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usewindowscroll--docs)
-  - [`useWindowSize`](./docs/useWindowSize.md) &mdash; tracks `Window` dimensions. [![][img-demo]](https://codesandbox.io/s/m7ln22668)
+  - :white_check_mark: [`useWindowSize`](./docs/useWindowSize.md) &mdash; tracks `Window` dimensions. [![][img-demo]](https://codesandbox.io/s/m7ln22668)  
+    监听 windonw.innerHeight/Width 的改变，并用 useRafState 进行了优化
   - [`useMeasure`](./docs/useMeasure.md) &mdash; tracks an HTML element's dimensions using the Resize Observer API.[![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemeasure--demo)
   - [`createBreakpoint`](./docs/createBreakpoint.md) &mdash; tracks `innerWidth`
   - [`useScrollbarWidth`](./docs/useScrollbarWidth.md) &mdash; detects browser's native scrollbars width. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescrollbarwidth--demo)
@@ -110,14 +111,18 @@
     <br/>
     <br/>
 - [**Lifecycles**](./docs/Lifecycles.md)
-  - [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) hook that only runs once.
+  - :white_check_mark: [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) hook that only runs once.  
+    useEffect 的语义级封装
   - [`useEvent`](./docs/useEvent.md) &mdash; subscribe to events.
-  - [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.
+  - :white_check_mark: [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.  
+    useEffect 的语义级封装
   - [`useMountedState`](./docs/useMountedState.md) and [`useUnmountPromise`](./docs/useUnmountPromise.md) &mdash; track if component is mounted.
   - [`usePromise`](./docs/usePromise.md) &mdash; resolves promise only while component is mounted.
   - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles.
-  - [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks.
-  - [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.
+  - :white_check_mark: [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks.  
+    useEffect 的语义级封装
+  - :white_check_mark: [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.  
+    useEffect 的语义级封装
   - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates.
   - [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) &mdash; `useLayoutEffect` that does not show warning when server-side rendering.
   - [`useDeepCompareEffect`](./docs/useDeepCompareEffect.md), [`useShallowCompareEffect`](./docs/useShallowCompareEffect.md), and [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies
@@ -133,10 +138,12 @@
   - [`usePrevious`](./docs/usePrevious.md) &mdash; returns the previous state or props. [![][img-demo]](https://codesandbox.io/s/fervent-galileo-krgx6)
   - [`usePreviousDistinct`](./docs/usePreviousDistinct.md) &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
   - [`useObservable`](./docs/useObservable.md) &mdash; tracks latest value of an `Observable`.
-  - [`useRafState`](./docs/useRafState.md) &mdash; creates `setState` method which only updates after `requestAnimationFrame`. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-userafstate--demo)
+  - :white_check_mark: [`useRafState`](./docs/useRafState.md) &mdash; creates `setState` method which only updates after `requestAnimationFrame`. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-userafstate--demo)  
+    使用 requestAnimationFrame 对 setState 进行优化。  
+    使用场景：对高频更新事件的监听，如：windon.resize
   - [`useSetState`](./docs/useSetState.md) &mdash; creates `setState` method which works like `this.setState`. [![][img-demo]](https://codesandbox.io/s/n75zqn1xp0)
   - [`useStateList`](./docs/useStateList.md) &mdash; circularly iterates over an array. [![][img-demo]](https://codesandbox.io/s/bold-dewdney-pjzkd)
-  - [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://codesandbox.io/s/focused-sammet-brw2d)  
+  - :white_check_mark: [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://codesandbox.io/s/focused-sammet-brw2d)  
     对单个布尔变量及其操作的封装。
   - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usecounter--demo)
   - [`useList`](./docs/useList.md) ~and [`useUpsert`](./docs/useUpsert.md)~ &mdash; tracks state of an array. [![][img-demo]](https://codesandbox.io/s/wonderful-mahavira-1sm0w)
