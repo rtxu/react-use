@@ -44,6 +44,7 @@
 </div>
 
 - [**Sensors**](./docs/Sensors.md)
+
   - [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)
   - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
   - [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)
@@ -61,16 +62,30 @@
   - [`usePageLeave`](./docs/usePageLeave.md) &mdash; triggers when mouse leaves page boundaries.
   - [`useScroll`](./docs/useScroll.md) &mdash; tracks an HTML element's scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescroll--docs)
   - [`useScrolling`](./docs/useScrolling.md) &mdash; tracks whether HTML element is scrolling.
-  - [`useSize`](./docs/useSize.md) &mdash; tracks an HTML element's size.
+  - :white_check_mark::thumbsup: [`useSize`](./docs/useSize.md) &mdash; tracks an HTML element's size.  
+    使用场景：
+
+    1. 元素随窗口长、宽修改而自适应，如：block 元素的宽度
+    2. 浏览器自身支持 zoom-in/out，此时也会影响 block 元素的宽度
+
+    实现方式：
+
+    1. 给 ReactElement 增加一个隐藏的 iframe 子节点
+    2. 利用父节点的 position: relative 和子节点的 position: absolute + (top-0, left-0, height-100%, width 100%)，则子节点的 offsetHeight 和 offsetWidth 即等于父节点的 height 和 width
+
   - [`useStartTyping`](./docs/useStartTyping.md) &mdash; detects when user starts typing.
   - [`useWindowScroll`](./docs/useWindowScroll.md) &mdash; tracks `Window` scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usewindowscroll--docs)
   - :white_check_mark: [`useWindowSize`](./docs/useWindowSize.md) &mdash; tracks `Window` dimensions. [![][img-demo]](https://codesandbox.io/s/m7ln22668)  
     监听 windonw.innerHeight/Width 的改变，并用 useRafState 进行了优化
-  - [`useMeasure`](./docs/useMeasure.md) &mdash; tracks an HTML element's dimensions using the Resize Observer API.[![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemeasure--demo)
+  - :white_check_mark::thumbsup: [`useMeasure`](./docs/useMeasure.md) &mdash; tracks an HTML element's dimensions using the Resize Observer API.[![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemeasure--demo)  
+    使用场景同 useSize  
+    使用方式不同（useSize 是 Higher-Order Component，useMeasue 通过 ref 实现）  
+    实现方式不同
   - [`createBreakpoint`](./docs/createBreakpoint.md) &mdash; tracks `innerWidth`
   - [`useScrollbarWidth`](./docs/useScrollbarWidth.md) &mdash; detects browser's native scrollbars width. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescrollbarwidth--demo)
     <br/>
     <br/>
+
 - [**UI**](./docs/UI.md)
   - [`useAudio`](./docs/useAudio.md) &mdash; plays audio and exposes its controls. [![][img-demo]](https://codesandbox.io/s/2o4lo6rqy)
   - [`useClickAway`](./docs/useClickAway.md) &mdash; triggers callback when user clicks outside target area.
@@ -106,7 +121,8 @@
   - [`useRafLoop`](./docs/useRafLoop.md) &mdash; calls given function inside the RAF loop.
   - [`useSessionStorage`](./docs/useSessionStorage.md) &mdash; manages a value in `sessionStorage`.
   - [`useThrottle` and `useThrottleFn`](./docs/useThrottle.md) &mdash; throttles a function. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/side-effects-usethrottle--demo)
-  - [`useTitle`](./docs/useTitle.md) &mdash; sets title of the page.
+  - :white_check_mark: [`useTitle`](./docs/useTitle.md) &mdash; sets title of the page.  
+    更新 page title
   - [`usePermission`](./docs/usePermission.md) &mdash; query permission status for browser APIs.
     <br/>
     <br/>
