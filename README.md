@@ -43,6 +43,24 @@
   <br />
 </div>
 
+# 阅读有感
+
+## 常见 Pattern
+
+### 使用 useMemo 确保所有 memorized value
+
+好处：
+
+1. callback function object id 唯一
+2. expensive calc 无需每次 render 都重新计算
+
+### 使用 useRef + useUpdate 代替 useState
+
+疑问：why?  
+猜测：首先 useRef 不会触发组件 re-render，而 useUpdate 强制组件 re-render（通过使用 useState），所以通过使用 useRef + useUpdate 的组合可以让组件 re-render 的行为变得人为可控。
+
+**但是这么做有什么好处呢？**我能想到的唯一好处就是多个 ref 变量修改时可以仅触发一次 re-render。
+
 - [**Sensors**](./docs/Sensors.md)
 
   - [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)
@@ -99,15 +117,22 @@
     <br/>
     <br/>
 - [**Animations**](./docs/Animations.md)
+
   - [`useRaf`](./docs/useRaf.md) &mdash; re-renders component on each `requestAnimationFrame`.
   - [`useInterval`](./docs/useInterval.md) and [`useHarmonicIntervalFn`](./docs/useHarmonicIntervalFn.md) &mdash; re-renders component on a set interval using `setInterval`.
   - [`useSpring`](./docs/useSpring.md) &mdash; interpolates number over time according to spring dynamics.
   - [`useTimeout`](./docs/useTimeout.md) &mdash; re-renders component after a timeout.
   - [`useTimeoutFn`](./docs/useTimeoutFn.md) &mdash; calls given function after a timeout. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/animation-usetimeoutfn--demo)
   - [`useTween`](./docs/useTween.md) &mdash; re-renders component, while tweening a number from 0 to 1. [![][img-demo]](https://codesandbox.io/s/52990wwzyl)
-  - [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.
-    <br/>
-    <br/>
+  - :white_check_mark: [`useUpdate`](./docs/useUpdate.md) &mdash; returns a callback, which re-renders component when called.  
+    强制触发组件更新
+
+    使用场景：
+
+    1. ref 作为类的成员变量使用时，其值的修改并不会触发组件更新，使用 useUpdate 可以强制触发组件更新
+       <br/>
+       <br/>
+
 - [**Side-effects**](./docs/Side-effects.md)
   - [`useAsync`](./docs/useAsync.md), [`useAsyncFn`](./docs/useAsyncFn.md), and [`useAsyncRetry`](./docs/useAsyncRetry.md) &mdash; resolves an `async` function.
   - [`useBeforeUnload`](./docs/useBeforeUnload.md) &mdash; shows browser alert when user try to reload or close the page.
@@ -139,7 +164,8 @@
     useEffect 的语义级封装
   - :white_check_mark: [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.  
     useEffect 的语义级封装
-  - [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates.
+  - :white_check_mark: [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates.  
+    useEffect 的语义级封装。仅当 update 时触发的 effect，mount/unmount 时均不触发
   - [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) &mdash; `useLayoutEffect` that does not show warning when server-side rendering.
   - [`useDeepCompareEffect`](./docs/useDeepCompareEffect.md), [`useShallowCompareEffect`](./docs/useShallowCompareEffect.md), and [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies
     <br/>
@@ -149,7 +175,8 @@
   - [`createReducer`](./docs/createReducer.md) &mdash; factory of reducer hooks with custom middleware.
   - [`createReducerContext`](./docs/createReducerContext.md) and [`createStateContext`](./docs/createStateContext.md) &mdash; factory of hooks for a sharing state between components.
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null` or `undefined`.
-  - [`useGetSet`](./docs/useGetSet.md) &mdash; returns state getter `get()` instead of raw state.
+  - :white_mark_check: [`useGetSet`](./docs/useGetSet.md) &mdash; returns state getter `get()` instead of raw state.  
+    为一个变量增加 getter and setter
   - [`useGetSetState`](./docs/useGetSetState.md) &mdash; as if [`useGetSet`](./docs/useGetSet.md) and [`useSetState`](./docs/useSetState.md) had a baby.
   - [`usePrevious`](./docs/usePrevious.md) &mdash; returns the previous state or props. [![][img-demo]](https://codesandbox.io/s/fervent-galileo-krgx6)
   - [`usePreviousDistinct`](./docs/usePreviousDistinct.md) &mdash; like `usePrevious` but with a predicate to determine if `previous` should update.
@@ -161,7 +188,8 @@
   - [`useStateList`](./docs/useStateList.md) &mdash; circularly iterates over an array. [![][img-demo]](https://codesandbox.io/s/bold-dewdney-pjzkd)
   - :white_check_mark: [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://codesandbox.io/s/focused-sammet-brw2d)  
     对单个布尔变量及其操作的封装。
-  - [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usecounter--demo)
+  - :white_check_mark: [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usecounter--demo)  
+    对 Counter 类数值变量及其操作的封装
   - [`useList`](./docs/useList.md) ~and [`useUpsert`](./docs/useUpsert.md)~ &mdash; tracks state of an array. [![][img-demo]](https://codesandbox.io/s/wonderful-mahavira-1sm0w)
   - [`useMap`](./docs/useMap.md) &mdash; tracks state of an object. [![][img-demo]](https://codesandbox.io/s/quirky-dewdney-gi161)
   - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://codesandbox.io/s/bold-shtern-6jlgw)
