@@ -47,7 +47,7 @@
 
 ## 常见 Pattern
 
-### 使用 useMemo 确保所有 memorized value
+### 使用 useMemo 确保尽可能返回 memorized value
 
 好处：
 
@@ -59,7 +59,7 @@
 疑问：why?  
 猜测：首先 useRef 不会触发组件 re-render，而 useUpdate 强制组件 re-render（通过使用 useState），所以通过使用 useRef + useUpdate 的组合可以让组件 re-render 的行为变得人为可控。
 
-**但是这么做有什么好处呢？**我能想到的唯一好处就是多个 ref 变量修改时可以仅触发一次 re-render。
+**但是这么做有什么好处呢？** 我能想到的唯一好处就是多个 ref 变量修改时可以仅触发一次 re-render。
 
 - [**Sensors**](./docs/Sensors.md)
 
