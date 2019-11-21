@@ -45,6 +45,8 @@
 
 # 阅读有感
 
+当前进度：406af205e37af2e16c20fa3f699287f5600a1c20
+
 ## 常见 Pattern
 
 ### 使用 useMemo 确保尽可能返回 memorized value
@@ -63,9 +65,11 @@
 
 - [**Sensors**](./docs/Sensors.md)
 
-  - [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)
+  - :white_mark_check: [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)  
+    获取设备实时电量信息
   - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
-  - [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)
+  - :white_mark_check: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
+    获取鼠标当前是否悬停（hover）在当前组件上
   - [`useIdle`](./docs/useIdle.md) &mdash; tracks whether user is being inactive.
   - [`useIntersection`](./docs/useIntersection.md) &mdash; tracks an HTML element's intersection. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-useintersection--demo)
   - [`useKey`](./docs/useKey.md), [`useKeyPress`](./docs/useKeyPress.md), [`useKeyboardJs`](./docs/useKeyboardJs.md), and [`useKeyPressEvent`](./docs/useKeyPressEvent.md) &mdash; track keys. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usekeypressevent--demo)
@@ -81,6 +85,7 @@
   - [`useScroll`](./docs/useScroll.md) &mdash; tracks an HTML element's scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescroll--docs)
   - [`useScrolling`](./docs/useScrolling.md) &mdash; tracks whether HTML element is scrolling.
   - :white_check_mark::thumbsup: [`useSize`](./docs/useSize.md) &mdash; tracks an HTML element's size.  
+    获取元素实时大小（长宽）
     使用场景：
 
     1. 元素随窗口长、宽修改而自适应，如：block 元素的宽度
@@ -190,8 +195,10 @@
     对单个布尔变量及其操作的封装。
   - :white_check_mark: [`useCounter` and `useNumber`](./docs/useCounter.md) &mdash; tracks state of a number. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usecounter--demo)  
     对 Counter 类数值变量及其操作的封装
-  - [`useList`](./docs/useList.md) ~and [`useUpsert`](./docs/useUpsert.md)~ &mdash; tracks state of an array. [![][img-demo]](https://codesandbox.io/s/wonderful-mahavira-1sm0w)
-  - [`useMap`](./docs/useMap.md) &mdash; tracks state of an object. [![][img-demo]](https://codesandbox.io/s/quirky-dewdney-gi161)
+  - :white_check_mark: [`useList`](./docs/useList.md) ~and [`useUpsert`](./docs/useUpsert.md)~ &mdash; tracks state of an array. [![][img-demo]](https://codesandbox.io/s/wonderful-mahavira-1sm0w)  
+    对 List 类型数据及其操作的封装
+  - :white_check_mark: [`useMap`](./docs/useMap.md) &mdash; tracks state of an object. [![][img-demo]](https://codesandbox.io/s/quirky-dewdney-gi161)  
+    对 Map 类型数据及其操作的封装
   - [`useSet`](./docs/useSet.md) &mdash; tracks state of a Set. [![][img-demo]](https://codesandbox.io/s/bold-shtern-6jlgw)
   - [`useQueue`](./docs/useQueue.md) &mdash; implements simple queue.
   - [`useStateValidator`](./docs/useStateValidator.md) &mdash; tracks state of an object. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usestatevalidator--demo)
