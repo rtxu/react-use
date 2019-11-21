@@ -65,10 +65,10 @@
 
 - [**Sensors**](./docs/Sensors.md)
 
-  - :white_mark_check: [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)  
+  - :white_check_mark: [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)  
     获取设备实时电量信息
   - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
-  - :white_mark_check: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
+  - :white_check_mark: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
     获取鼠标当前是否悬停（hover）在当前组件上
   - [`useIdle`](./docs/useIdle.md) &mdash; tracks whether user is being inactive.
   - [`useIntersection`](./docs/useIntersection.md) &mdash; tracks an HTML element's intersection. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-useintersection--demo)
@@ -180,7 +180,7 @@
   - [`createReducer`](./docs/createReducer.md) &mdash; factory of reducer hooks with custom middleware.
   - [`createReducerContext`](./docs/createReducerContext.md) and [`createStateContext`](./docs/createStateContext.md) &mdash; factory of hooks for a sharing state between components.
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null` or `undefined`.
-  - :white_mark_check: [`useGetSet`](./docs/useGetSet.md) &mdash; returns state getter `get()` instead of raw state.  
+  - :white_check_mark: [`useGetSet`](./docs/useGetSet.md) &mdash; returns state getter `get()` instead of raw state.  
     为一个变量增加 getter and setter
   - [`useGetSetState`](./docs/useGetSetState.md) &mdash; as if [`useGetSet`](./docs/useGetSet.md) and [`useSetState`](./docs/useSetState.md) had a baby.
   - [`usePrevious`](./docs/usePrevious.md) &mdash; returns the previous state or props. [![][img-demo]](https://codesandbox.io/s/fervent-galileo-krgx6)
