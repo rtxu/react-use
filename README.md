@@ -47,6 +47,8 @@
 
 当前进度：406af205e37af2e16c20fa3f699287f5600a1c20
 
+TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typescript/lib/ 下找到
+
 ## 常见 Pattern
 
 ### 使用 useMemo 确保尽可能返回 memorized value
@@ -67,13 +69,15 @@
 
   - :white_check_mark: [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)  
     获取设备实时电量信息
-  - [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
+  - :white_check_mark: [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
+    获取设备实时地理位置信息
   - :white_check_mark: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
     获取鼠标当前是否悬停（hover）在当前组件上
   - [`useIdle`](./docs/useIdle.md) &mdash; tracks whether user is being inactive.
   - [`useIntersection`](./docs/useIntersection.md) &mdash; tracks an HTML element's intersection. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-useintersection--demo)
   - [`useKey`](./docs/useKey.md), [`useKeyPress`](./docs/useKeyPress.md), [`useKeyboardJs`](./docs/useKeyboardJs.md), and [`useKeyPressEvent`](./docs/useKeyPressEvent.md) &mdash; track keys. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usekeypressevent--demo)
-  - [`useLocation`](./docs/useLocation.md) and [`useSearchParam`](./docs/useSearchParam.md) &mdash; tracks page navigation bar location state.
+  - :white_check_mark: [`useLocation`](./docs/useLocation.md) and [`useSearchParam`](./docs/useSearchParam.md) &mdash; tracks page navigation bar location state.  
+    获取浏览器地址栏内容和地址 History
   - [`useLongPress`](./docs/useLongPress.md) &mdash; tracks long press gesture of some element.
   - [`useMedia`](./docs/useMedia.md) &mdash; tracks state of a CSS media query. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemedia--demo)
   - [`useMediaDevices`](./docs/useMediaDevices.md) &mdash; tracks state of connected hardware devices.
@@ -177,7 +181,9 @@
     <br/>
 - [**State**](./docs/State.md)
   - [`createMemo`](./docs/createMemo.md) &mdash; factory of memoized hooks.
-  - [`createReducer`](./docs/createReducer.md) &mdash; factory of reducer hooks with custom middleware.
+  - :white_check_mark::thumbsup: [`createReducer`](./docs/createReducer.md) &mdash; factory of reducer hooks with custom middleware.  
+    可以给 local reducer 添加 middleware  
+    :question: 代码还没有完全看懂消化
   - [`createReducerContext`](./docs/createReducerContext.md) and [`createStateContext`](./docs/createStateContext.md) &mdash; factory of hooks for a sharing state between components.
   - [`useDefault`](./docs/useDefault.md) &mdash; returns the default value when state is `null` or `undefined`.
   - :white_check_mark: [`useGetSet`](./docs/useGetSet.md) &mdash; returns state getter `get()` instead of raw state.  
