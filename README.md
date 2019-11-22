@@ -69,7 +69,7 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
 
   - :white_check_mark: [`useBattery`](./docs/useBattery.md) &mdash; tracks device battery state. [![][img-demo]](https://codesandbox.io/s/qlvn662zww)  
     获取设备实时电量信息
-  - :white_check_mark: [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)
+  - :white_check_mark: [`useGeolocation`](./docs/useGeolocation.md) &mdash; tracks geo location state of user's device. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usegeolocation--demo)  
     获取设备实时地理位置信息
   - :white_check_mark: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
     获取鼠标当前是否悬停（hover）在当前组件上
