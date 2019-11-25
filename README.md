@@ -45,9 +45,14 @@
 
 # 阅读有感
 
-当前进度：406af205e37af2e16c20fa3f699287f5600a1c20
+当前进度：
+c533b9713817b32927f20acf8eb74f33f6f53aec
 
 TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typescript/lib/ 下找到
+
+# Javascript 奇技淫巧
+
+1. !!：cast a var of any type to boolean type
 
 ## 常见 Pattern
 
@@ -79,12 +84,15 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
   - :white_check_mark: [`useLocation`](./docs/useLocation.md) and [`useSearchParam`](./docs/useSearchParam.md) &mdash; tracks page navigation bar location state.  
     获取浏览器地址栏内容和地址 History
   - [`useLongPress`](./docs/useLongPress.md) &mdash; tracks long press gesture of some element.
-  - [`useMedia`](./docs/useMedia.md) &mdash; tracks state of a CSS media query. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemedia--demo)
-  - [`useMediaDevices`](./docs/useMediaDevices.md) &mdash; tracks state of connected hardware devices.
+  - :white_check_mark: [`useMedia`](./docs/useMedia.md) &mdash; tracks state of a CSS media query. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemedia--demo)  
+    获取一个 media query 的实时结果
+  - :white_check_mark: [`useMediaDevices`](./docs/useMediaDevices.md) &mdash; tracks state of connected hardware devices.  
+    获取当前本机的媒体设备信息（如：摄像头、麦克风等）
   - [`useMotion`](./docs/useMotion.md) &mdash; tracks state of device's motion sensor.
   - [`useMouse` and `useMouseHovered`](./docs/useMouse.md) &mdash; tracks state of mouse position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemouse--docs)
   - [`useNetwork`](./docs/useNetwork.md) &mdash; tracks state of user's internet connection.
-  - [`useOrientation`](./docs/useOrientation.md) &mdash; tracks state of device's screen orientation.
+  - :white_check_mark: [`useOrientation`](./docs/useOrientation.md) &mdash; tracks state of device's screen orientation.  
+    获取当前屏幕方向
   - [`usePageLeave`](./docs/usePageLeave.md) &mdash; triggers when mouse leaves page boundaries.
   - [`useScroll`](./docs/useScroll.md) &mdash; tracks an HTML element's scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescroll--docs)
   - [`useScrolling`](./docs/useScrolling.md) &mdash; tracks whether HTML element is scrolling.
@@ -103,9 +111,9 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
   - [`useStartTyping`](./docs/useStartTyping.md) &mdash; detects when user starts typing.
   - [`useWindowScroll`](./docs/useWindowScroll.md) &mdash; tracks `Window` scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usewindowscroll--docs)
   - :white_check_mark: [`useWindowSize`](./docs/useWindowSize.md) &mdash; tracks `Window` dimensions. [![][img-demo]](https://codesandbox.io/s/m7ln22668)  
-    监听 windonw.innerHeight/Width 的改变，并用 useRafState 进行了优化
+    监听 window.innerHeight/Width 的改变，并用 useRafState 进行了优化
   - :white_check_mark::thumbsup: [`useMeasure`](./docs/useMeasure.md) &mdash; tracks an HTML element's dimensions using the Resize Observer API.[![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemeasure--demo)  
-    使用场景同 useSize  
+    使用场景是 useSize 的超集，除了可以跟踪元素大小，还有位置  
     使用方式不同（useSize 是 Higher-Order Component，useMeasue 通过 ref 实现）  
     实现方式不同
   - [`createBreakpoint`](./docs/createBreakpoint.md) &mdash; tracks `innerWidth`
