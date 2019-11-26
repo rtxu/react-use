@@ -46,7 +46,7 @@
 # 阅读有感
 
 当前进度：
-c533b9713817b32927f20acf8eb74f33f6f53aec
+1ee8c72081b3960eed2f730bcac8651cd065a5a0
 
 TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typescript/lib/ 下找到
 
@@ -78,7 +78,8 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
     获取设备实时地理位置信息
   - :white_check_mark: [`useHover` and `useHoverDirty`](./docs/useHover.md) &mdash; tracks mouse hover state of some element. [![][img-demo]](https://codesandbox.io/s/zpn583rvx)  
     获取鼠标当前是否悬停（hover）在当前组件上
-  - [`useIdle`](./docs/useIdle.md) &mdash; tracks whether user is being inactive.
+  - :white_check_mark: [`useIdle`](./docs/useIdle.md) &mdash; tracks whether user is being inactive.  
+    根据监听用户输入事件（mousedown/mousemove/keydown/resize/touchstart/wheel），判断当前用户是否处于 idle 状态。
   - [`useIntersection`](./docs/useIntersection.md) &mdash; tracks an HTML element's intersection. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-useintersection--demo)
   - [`useKey`](./docs/useKey.md), [`useKeyPress`](./docs/useKeyPress.md), [`useKeyboardJs`](./docs/useKeyboardJs.md), and [`useKeyPressEvent`](./docs/useKeyPressEvent.md) &mdash; track keys. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usekeypressevent--demo)
   - :white_check_mark: [`useLocation`](./docs/useLocation.md) and [`useSearchParam`](./docs/useSearchParam.md) &mdash; tracks page navigation bar location state.  
@@ -88,12 +89,16 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
     获取一个 media query 的实时结果
   - :white_check_mark: [`useMediaDevices`](./docs/useMediaDevices.md) &mdash; tracks state of connected hardware devices.  
     获取当前本机的媒体设备信息（如：摄像头、麦克风等）
-  - [`useMotion`](./docs/useMotion.md) &mdash; tracks state of device's motion sensor.
+  - :white_check_mark: [`useMotion`](./docs/useMotion.md) &mdash; tracks state of device's motion sensor.  
+    获取当前设备的移动信息（三维空间的加速度等，来自于陀螺仪）
   - [`useMouse` and `useMouseHovered`](./docs/useMouse.md) &mdash; tracks state of mouse position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usemouse--docs)
-  - [`useNetwork`](./docs/useNetwork.md) &mdash; tracks state of user's internet connection.
+  - :white_check_mark: [`useNetwork`](./docs/useNetwork.md) &mdash; tracks state of user's internet connection.  
+    获取当前设备的网络连接情况（连接类型：bluetooth/cellular/ethernet/none/wifi、是否在线、下载速率、rtt 等）  
+    实验性 feature，浏览器支持并不好
   - :white_check_mark: [`useOrientation`](./docs/useOrientation.md) &mdash; tracks state of device's screen orientation.  
     获取当前屏幕方向
-  - [`usePageLeave`](./docs/usePageLeave.md) &mdash; triggers when mouse leaves page boundaries.
+  - :white_check_mark: [`usePageLeave`](./docs/usePageLeave.md) &mdash; triggers when mouse leaves page boundaries.  
+    当鼠标离开页面区域时，触发 handler
   - [`useScroll`](./docs/useScroll.md) &mdash; tracks an HTML element's scroll position. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/sensors-usescroll--docs)
   - [`useScrolling`](./docs/useScrolling.md) &mdash; tracks whether HTML element is scrolling.
   - :white_check_mark::thumbsup: [`useSize`](./docs/useSize.md) &mdash; tracks an HTML element's size.  
@@ -157,7 +162,8 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
   - [`useCopyToClipboard`](./docs/useCopyToClipboard.md) &mdash; copies text to clipboard.
   - [`useDebounce`](./docs/useDebounce.md) &mdash; debounces a function. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/side-effects-usedebounce--demo)
   - [`useError`](./docs/useError.md) &mdash; error dispatcher. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/side-effects-useerror--demo)
-  - [`useFavicon`](./docs/useFavicon.md) &mdash; sets favicon of the page.
+  - :white_check_mark: [`useFavicon`](./docs/useFavicon.md) &mdash; sets favicon of the page.  
+    给 html page 添加 favicon（在 head 中插入 link）
   - [`useLocalStorage`](./docs/useLocalStorage.md) &mdash; manages a value in `localStorage`.
   - [`useLockBodyScroll`](./docs/useLockBodyScroll.md) &mdash; lock scrolling of the body element.
   - [`useRafLoop`](./docs/useRafLoop.md) &mdash; calls given function inside the RAF loop.
