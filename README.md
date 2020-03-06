@@ -177,20 +177,25 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
 - [**Lifecycles**](./docs/Lifecycles.md)
   - :white_check_mark: [`useEffectOnce`](./docs/useEffectOnce.md) &mdash; a modified [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) hook that only runs once.  
     useEffect 的语义级封装
-  - [`useEvent`](./docs/useEvent.md) &mdash; subscribe to events.
+  - :white_check_mark: [`useEvent`](./docs/useEvent.md) &mdash; subscribe to events.  
+    注册 event handler
   - :white_check_mark: [`useLifecycles`](./docs/useLifecycles.md) &mdash; calls `mount` and `unmount` callbacks.  
     useEffect 的语义级封装
-  - [`useMountedState`](./docs/useMountedState.md) and [`useUnmountPromise`](./docs/useUnmountPromise.md) &mdash; track if component is mounted.
-  - [`usePromise`](./docs/usePromise.md) &mdash; resolves promise only while component is mounted.
-  - [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles.
+  - :white_check_mark: [`useMountedState`](./docs/useMountedState.md) and [`useUnmountPromise`](./docs/useUnmountPromise.md) &mdash; track if component is mounted.  
+    想不到使用场景
+  - :white_check_mark: [`usePromise`](./docs/usePromise.md) &mdash; resolves promise only while component is mounted.  
+    想不到使用场景
+  - :white_check_mark: [`useLogger`](./docs/useLogger.md) &mdash; logs in console as component goes through life-cycles.  
+    将一个 component 的 mount/umount/update 事件 log 下来，供调试时使用
   - :white_check_mark: [`useMount`](./docs/useMount.md) &mdash; calls `mount` callbacks.  
     useEffect 的语义级封装
   - :white_check_mark: [`useUnmount`](./docs/useUnmount.md) &mdash; calls `unmount` callbacks.  
     useEffect 的语义级封装
   - :white_check_mark: [`useUpdateEffect`](./docs/useUpdateEffect.md) &mdash; run an `effect` only on updates.  
     useEffect 的语义级封装。仅当 update 时触发的 effect，mount/unmount 时均不触发
-  - [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) &mdash; `useLayoutEffect` that does not show warning when server-side rendering.
-  - [`useDeepCompareEffect`](./docs/useDeepCompareEffect.md), [`useShallowCompareEffect`](./docs/useShallowCompareEffect.md), and [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies
+  - :white_check_mark: [`useIsomorphicLayoutEffect`](./docs/useIsomorphicLayoutEffect.md) &mdash; `useLayoutEffect` that does not show warning when server-side rendering.  
+    window 对象存在时，使用 useLayoutEffect；不存在时，使用 useEffect
+  - :white_check_mark: [`useDeepCompareEffect`](./docs/useDeepCompareEffect.md), [`useShallowCompareEffect`](./docs/useShallowCompareEffect.md), and [`useCustomCompareEffect`](./docs/useCustomCompareEffect.md) &mdash; run an `effect` depending on deep comparison of its dependencies
     <br/>
     <br/>
 - [**State**](./docs/State.md)
@@ -208,7 +213,7 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
   - [`useObservable`](./docs/useObservable.md) &mdash; tracks latest value of an `Observable`.
   - :white_check_mark: [`useRafState`](./docs/useRafState.md) &mdash; creates `setState` method which only updates after `requestAnimationFrame`. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-userafstate--demo)  
     使用 requestAnimationFrame 对 setState 进行优化。  
-    使用场景：对高频更新事件的监听，如：windon.resize
+    使用场景：对高频更新事件的监听，如：window.resize
   - [`useSetState`](./docs/useSetState.md) &mdash; creates `setState` method which works like `this.setState`. [![][img-demo]](https://codesandbox.io/s/n75zqn1xp0)
   - [`useStateList`](./docs/useStateList.md) &mdash; circularly iterates over an array. [![][img-demo]](https://codesandbox.io/s/bold-dewdney-pjzkd)
   - :white_check_mark: [`useToggle` and `useBoolean`](./docs/useToggle.md) &mdash; tracks state of a boolean. [![][img-demo]](https://codesandbox.io/s/focused-sammet-brw2d)  
@@ -225,7 +230,8 @@ TypeScript 自带了 DOM 和 ESxxxx 的类型定义，可以在 node_modules/typ
   - [`useStateWithHistory`](./docs/useStateWithHistory.md) &mdash; stores previous state values and provides handles to travel through them. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usestatewithhistory--demo)
   - [`useMultiStateValidator`](./docs/useMultiStateValidator.md) &mdash; alike the `useStateValidator`, but tracks multiple states at a time. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usemultistatevalidator--demo)
   - [`useMediatedState`](./docs/useMediatedState.md) &mdash; like the regular `useState` but with mediation by custom function. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usemediatedstate--demo)
-  - [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current render is first. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usefirstmountstate--demo)
+  - :white_check_mark: [`useFirstMountState`](./docs/useFirstMountState.md) &mdash; check if current render is first. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usefirstmountstate--demo)  
+    想不到使用场景
   - [`useRendersCount`](./docs/useRendersCount.md) &mdash; count component renders. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-userenderscount--demo)
   - [`createGlobalState`](./docs/createGlobalState.md) &mdash; cross component shared state.[![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-createglobalstate--demo)
   - [`useMethods`](./docs/useMethods.md) &mdash; neat alternative to `useReducer`. [![][img-demo]](https://streamich.github.io/react-use/?path=/story/state-usemethods--demo)
